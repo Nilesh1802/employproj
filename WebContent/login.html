@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<title>Insert title here</title>
+<style>
+#colorc
+{
+color:#5d5d5d;
+}
+</style>
+<script>
+
+function validateUsername()
+{
+	var x=document.forms["addForm"]["username"].value;
+	 if (x == "") {
+	        alert("Username must be filled out");
+	        return false;
+	 }
+	 return true;
+	}
+	
+function validatePassword()
+{
+	var x=document.forms["addForm"]["password"].value;
+	 if (x == "") {
+	        alert("Password must be filled out");
+	        return false;
+	    }
+	 return true;
+	 
+}
+function validateForm()
+{
+	var x=validateUsername();
+	var y=validatePassword();
+	if(x==false || y==false)
+	{
+	return false;
+	}
+	 return true;
+}
+</script>
+</head>
+<body><br><br><br><br>
+
+
+<div class="header">
+<div class="header-top">
+<h1 >Employee Profile Project</h1>
+</div>
+<img src="images/footnote.gif" class="copyright" alt="http://www.usaonlinecasinos.org"></a>
+<!--DO NOT Remove The Footer Links-->
+<center>
+<form name="myform" action="LoginServlet" method="post" onsubmit="return validateForm()">
+<br><br><br><br><br><br>
+<h2 id="colorc">Login Form</h2><br><br>
+<p id="colorc">Username : <input type="text" name="username"><br><br></p>
+
+<p id="colorc">Password : <input type="password" name="password"><br><br></p>
+
+<input type="submit" id="colorse" value="Login"  style="color:white;background-color:black;width:7%;">
+</form>
+</center>
+</body>
+</html>

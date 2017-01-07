@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<title>Insert title here</title>
+<style>
+#colorc
+{
+color:#ffffff;
+}
+#colorse
+{
+background-color : blue;
+color:red;
+}
+</style>
+<script>
+
+function validateSalary()
+{
+	var x=document.forms["addForm"]["salary"].value;
+	 if (x == "") {
+	        alert("Salary must be filled out");
+	        return false;
+	    }
+	 if(isNaN(x))
+		 {
+		 alert("Id cannot have a character");
+		 }
+	 return true;
+	}
+	
+function validateId()
+{
+	var x=document.forms["addForm"]["id"].value;
+	 if (x == "") {
+	        alert("Id must be filled out");
+	        return false;
+	    }
+	 else if(isNaN(x))
+	 {
+		 alert("Id cannot have a character");
+		 return false
+	 }
+	 return true;
+	 
+}
+function validateName()
+{
+	var x=document.forms["addForm"]["name"].value;
+	 if (x == "") {
+	        alert("Name must be filled out");
+	        return false;
+	    }
+	 return true;
+}
+
+function validateForm()
+{
+	var x=validateId();
+	var y=validateName();
+	var z=validateSalary();
+	if(x==false || y==false || z==false)
+		return false;
+	 return true;
+}
+	
+
+</script>
+</head>
+<body><br><br><br><br>
+<div class="page-in">
+<div class="page">
+<div class="main">
+<div class="header">
+<div class="header-top">
+<h1 >Employee Details</h1>
+</div>
+<img src="images/footnote.gif" class="copyright" alt="http://www.usaonlinecasinos.org"></a>
+<!--DO NOT Remove The Footer Links-->
+</div>
+ <div class="topmenu">
+<ul>
+  <li><a href="insert.html"><span>Insert&nbsp;</span></a></li>
+  <li><a href="update.html"><span>Update&nbsp;</span></a></li>
+  <li><a href="delete.html"><span>Delete</span></a></li>
+  <li><a href="search.html"><span>Search</span></a></li>
+  <li><a href="viewall.jsp"><span>View All</span></a></li>
+</ul>
+
+<br><center>
+
+<h3 style="color:5d5d5d;">Enter The Value to be Updated</h3><br><br>
+
+<form action="UpdateServlet" name="addForm" onsubmit="return validateForm()">
+
+<h4 style="color:5d5d5d5">Id : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="id"><br><br>
+
+Name:&nbsp;&nbsp;&nbsp;  <input type="text" name="name"><br><br>
+
+Salary:&nbsp;&nbsp;&nbsp; <input type="text" name="salary"><br><br>
+
+<input type="submit" id="colorse" value="Update" style="color:white;background-color:black;"></h4>
+</form>
+
+</center>
+</div>
+</body>
+</html>

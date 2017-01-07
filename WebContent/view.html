@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+#colorc
+{
+color:#ffffff;
+}
+#colorse
+{
+background-color : blue;
+color:red;
+}
+</style>
+<script>
+
+function validateSalary()
+{
+	var x=document.forms["addForm"]["salary"].value;
+	 if (x == "") {
+	        alert("Salary must be filled out");
+	        return false;
+	    }
+	 if(isNaN(x))
+		 {
+		 alert("Id cannot have a character");
+		 }
+	 return true;
+	}
+	
+function validateId()
+{
+	var x=document.forms["addForm"]["id"].value;
+	 if (x == "") {
+	        alert("Id must be filled out");
+	        return false;
+	    }
+	 else if(isNaN(x))
+	 {
+		 alert("Id cannot have a character");
+		 return false
+	 }
+	 return true;
+	 
+}
+function validateName()
+{
+	var x=document.forms["addForm"]["name"].value;
+	 if (x == "") {
+	        alert("Name must be filled out");
+	        return false;
+	    }
+	 return true;
+}
+
+function validateForm()
+{
+	var x=validateId();
+	var y=validateName();
+	var z=validateSalary();
+	if(x==false || y==false || z==false)
+		return false;
+	 return true;
+}
+	
+
+</script>
+</head>
+<body bgcolor="#5d5d5d">
+<br><center>
+<div>
+<form action="ViewServlet" name="addForm" onsubmit="return validateForm()">
+
+<p id="colorc">Id:</p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="id"><br><br>
+
+<p id="colorc">Name:</p> <input type="text" name="name"><br><br>
+
+<p id="colorc">Salary:</p><input type="text" name="salary"><br><br>
+
+<input type="submit" id="colorse" value="View Result">
+</form>
+
+</center>
+</div>
+</body>
+</html>
